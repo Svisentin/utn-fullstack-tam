@@ -1,0 +1,53 @@
+<div class="container m-5">
+  <div class="row">
+    <div class="col">
+      <p class="text-end">Hola
+        {{usuario}}!
+        <a href="/admin/login/logout" class="btn btn-sm btn-danger">
+          Cerrar sesión
+          <i class="fa fa-sign-out"></i></a>
+      </p>
+    </div>
+  </div>
+  <div class="row mt-5 border-bottom border-black">
+    <div class="col">
+      <h3>Listado de novedades</h3>
+    </div>
+
+    <div class="col-2 text-end">
+      <a href="/admin/novedades/agregar" class="btn btn-success">
+        <i class="fa fa-plus"></i>Nuevo</a>
+    </div>
+  </div>
+</div>
+<div class="container-fluid row">
+  <div class="col">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col p-2 m-2">#</th>
+          <th scope="col p-2 m-2">Título</th>
+          <th scope="col p-2 m-2">Subtitulo</th>
+          <th scope="col p-2 m-2">Cuerpo</th>
+          <th scope="col p-2 m-2" class="text-center">Acciones</th>
+        </tr>
+      </thead>
+      <body>
+        {{#each novedades}}
+          <tr>
+            <th  scope="row" class="p-3">{{id}}</th>
+            <td class="p-3">{{titulo}}</td>
+            <td class="p-3"> {{subtitulo}}</td>
+            <td class="p-3"> {{cuerpo}}</td>
+            <td class="text-center p-2">
+              <a href="/admin/novedades/modificar/{{id}}" class="btn btn-sm btn-secondary"><i
+    class="fa fa-pencil"></i></a>
+              <a href = "/admin/novedades/eliminar/{{id}}" class="btn btn-sm btn-secondary" >
+              <i class="fa fa-trash"></i></a >
+            </td>
+          </tr>
+        {{/each}}
+      </body>
+    </table>
+  </div>
+</div>
